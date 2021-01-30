@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "app-notes"
+    }
+  },
+  "defaultProject": "app-notes",
+  "cli": {
+    "analytics": false
+  }
 }

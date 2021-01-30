@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #2F0E45;
+    height: 100%;
+    padding: 12px;
+
+    .fa {
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+}
