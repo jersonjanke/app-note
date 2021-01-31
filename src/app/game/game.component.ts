@@ -1,7 +1,6 @@
 import { Notes } from './../model/notes';
 import { Component, OnInit } from '@angular/core';
 import { AudioService } from '../service/audio.service';
-import { combineLatest } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game',
@@ -41,19 +40,13 @@ export class GameComponent {
   setNextLevel() {
     if (this.score >= 50) {
       this.level = 2;
-      this.note1 = 'Mi';
-      this.note2 = 'Fá';
     }
     if (this.score >= 100) {
       this.level = 3;
-      this.note1 = 'Sol';
-      this.note2 = 'Lá';
 
     }
     if (this.score >= 150) {
       this.level = 4;
-      this.note1 = 'Si';
-      this.note2 = 'Dó';
     }
   }
 }

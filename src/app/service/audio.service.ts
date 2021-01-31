@@ -17,24 +17,28 @@ export class AudioService {
           { note:  "./assets/notes/do.mp3", desc: "Dó" },
           { note:  "./assets/notes/re.mp3", desc: "Ré" }
         ]
+        break;
       }
       case 2: {
         notes = [
           { note:  "./assets/notes/mi.mp3", desc: "Mi" },
           { note:  "./assets/notes/fa.mp3", desc: "Fá" }
         ]
+        break;
       }
       case 3: {
         notes = [
           { note:  "./assets/notes/sol.mp3", desc: "Sol" },
           { note:  "./assets/notes/la.mp3", desc: "Lá" }
         ]
+        break;
       }
       case 4: {
         notes = [
           { note:  "./assets/notes/si.mp3", desc: "Si" },
           { note:  "./assets/notes/do.mp3", desc: "Dó" }
         ]
+        break;
       }
     }
 
