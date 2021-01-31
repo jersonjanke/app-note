@@ -1,5 +1,7 @@
+import { Notes } from './../model/notes';
 import { Component, OnInit } from '@angular/core';
 import { AudioService } from '../service/audio.service';
+import { combineLatest } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game',
@@ -19,8 +21,13 @@ export class GameComponent {
   constructor(private audioService: AudioService) { }
 
   play(): void {
-    this.note = this.audioService.randomNote(2) as number;
-    this.audioService.playAudio(this.note, this.level);
+    this.audioService.randomNote(2).subscribe(note => {
+      this.note = note;
+      this.audioService.playAudio(note, this.level).subscribe((notes: Notes[]) => {
+        this.note1 = notes[0].desc;
+        this.note2 = notes[1].desc;
+      })
+    });
   }
 
   validateNote(action): void {

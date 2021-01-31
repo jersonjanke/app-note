@@ -3,16 +3,16 @@
     <button class="play" (click)="play()">Play</button>
     <div class="score">Pontos: {{ score }}</div>
     <div class="container-buttons">
-        <button (click)="validateNote(0)" >{{ note1 }}</button>
+        <button (click)="validateNote(0)">{{ note1 }}</button>
         <button (click)="validateNote(1)">{{ note2 }}</button>
     </div>
-    <div *ngIf="!isPlay" style="height: 30%;"></div>
-    <div *ngIf="isPlay" class="result">Resultado</div>
+    <div class="result">Resultado</div>
+    <div *ngIf="!isPlay" style="height: 38px;"></div>
     <div *ngIf="correct && isPlay">
-        <i class="fa fa-5x fa-check-circle-o" style="color: green" aria-hidden="true"></i>
+        <i class="fa fa-3x fa-check-circle-o" style="color: green" aria-hidden="true"></i>
     </div>
     <div *ngIf="!correct && isPlay">
-        <i class="fa fa-5x fa-times-circle-o" style="color: red" aria-hidden="true"></i>
+        <i class="fa fa-3x fa-times-circle-o" style="color: red" aria-hidden="true"></i>
     </div>
     <br />
 </div>
