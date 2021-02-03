@@ -1,6 +1,7 @@
 import { Notes } from './../model/notes';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AudioService } from '../service/audio.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game',
@@ -14,24 +15,26 @@ export class GameComponent {
   public score = 0;
   public level = 1;
   public isPlay: boolean;
-  public note1 = 'Dó';
-  public note2 = 'Ré';
+  public start: boolean;
+  public notes: Notes[];
+  public countNotes = 2;
 
   constructor(private audioService: AudioService) { }
 
   play(): void {
-    this.audioService.randomNote(2).subscribe(note => {
+    this.start = true;
+    this.audioService.randomNote(this.countNotes).subscribe(note => {
       this.note = note;
-      this.audioService.playAudio(note, this.level).subscribe((notes: Notes[]) => {
-        this.note1 = notes[0].desc;
-        this.note2 = notes[1].desc;
+      this.audioService.playAudio(note, this.level).pipe(take(1))
+      .subscribe((notes: Notes[]) => {
+        this.notes = notes;
       })
     });
   }
 
-  validateNote(action): void {
+  validateNote(note: Notes): void {
     this.isPlay = true;
-    this.correct = this.note === action;
+    this.correct = note.code === this.note;
     this.score = this.score + (this.correct ? 10 : 0);
     this.setNextLevel();
     setTimeout(() => { this.isPlay = false; this.play() }, 2000)
@@ -40,13 +43,39 @@ export class GameComponent {
   setNextLevel() {
     if (this.score >= 50) {
       this.level = 2;
+      this.countNotes = 2;
     }
     if (this.score >= 100) {
       this.level = 3;
-
+      this.countNotes = 2;
     }
     if (this.score >= 150) {
       this.level = 4;
+      this.countNotes = 2;
+    }
+    if (this.score >= 200) {
+      this.level = 5;
+      this.countNotes = 3;
+    }
+    if (this.score >= 250) {
+      this.level = 6;
+      this.countNotes = 3;
+    }
+    if (this.score >= 300) {
+      this.level = 7;
+      this.countNotes = 4;
+    }
+    if (this.score >= 350) {
+      this.level = 8;
+      this.countNotes = 4;
+    }
+    if (this.score >= 400) {
+      this.level = 9;
+      this.countNotes = 5;
+    }
+    if (this.score >= 450) {
+      this.level = 10;
+      this.countNotes = 6;
     }
   }
 }
