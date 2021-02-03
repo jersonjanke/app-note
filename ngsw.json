@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1612316942917,
+  "timestamp": 1612321058118,
   "index": "/app-notes/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "/app-notes/favicon.ico",
         "/app-notes/index.html",
-        "/app-notes/main-es2015.e2f3089e3128fcce85e0.js",
-        "/app-notes/main-es5.e2f3089e3128fcce85e0.js",
+        "/app-notes/main-es2015.7852a9b16879af58459e.js",
+        "/app-notes/main-es5.7852a9b16879af58459e.js",
         "/app-notes/manifest.webmanifest",
         "/app-notes/polyfills-es2015.6022d6f28e0500e60d30.js",
         "/app-notes/polyfills-es5.6e1055b712d0b250b19e.js",
@@ -189,9 +189,9 @@
     "/app-notes/assets/notes/sol.mp3": "a1e09571d08e8da9758a7fb51ce6c60636bf9c57",
     "/app-notes/bg-notes.dac1197f29f95e7c6b24.jpg": "90a001459077ec2a3c31a415e1c23d6eb824e929",
     "/app-notes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/app-notes/index.html": "600a230f4ea759a8e3f611dbf82b19923ee41eab",
-    "/app-notes/main-es2015.e2f3089e3128fcce85e0.js": "e6b03d8934330898142e7cc39df73fc8fcdfd876",
-    "/app-notes/main-es5.e2f3089e3128fcce85e0.js": "66a7253a427e46e3a4859962d4be48550e4d3cf1",
+    "/app-notes/index.html": "28d5019f0cd15d067115c5389894aacf0bd7a84f",
+    "/app-notes/main-es2015.7852a9b16879af58459e.js": "16d4e67c34ff6cd2db08cc623e9af32f40d34618",
+    "/app-notes/main-es5.7852a9b16879af58459e.js": "01c48bab84d703eedd2813c30770a07c164b60db",
     "/app-notes/manifest.webmanifest": "359113d530970b639aab9712363e9014ec19fb6c",
     "/app-notes/polyfills-es2015.6022d6f28e0500e60d30.js": "cad3129c71535baaab25ac06d8429734959b0b3f",
     "/app-notes/polyfills-es5.6e1055b712d0b250b19e.js": "ddab36708d3bfe0102402cd9e170eb47c267b9f8",
