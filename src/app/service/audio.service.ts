@@ -11,6 +11,8 @@ export class AudioService {
 
   playAudio(id: number, level: number): Observable<Notes[]> {
     let notes = [];
+    let audio = null;
+
     switch(level) {
       case 1: {
         notes = [
@@ -42,11 +44,12 @@ export class AudioService {
       }
     }
 
-    let audio = new Audio();
-    audio.autoplay = true;
+    audio = new Audio();
     audio.src = notes[id].note;
     audio.load();
     audio.play();
+    
+    setTimeout(() => { audio.pause() }, 3000)
 
     return of(notes)
   }
