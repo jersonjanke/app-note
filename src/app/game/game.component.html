@@ -1,17 +1,18 @@
 <div class="game">
     <div class="level">Level: {{ level }}</div>
-    <button class="play" (click)="play()">Play</button>
-    <div class="score" *ngIf="start">Pontos: {{ score }}</div>
-    <div class="container-buttons" >
-        <button *ngFor="let note of notes; let i = index;" (click)="validateNote(note)">{{ note.desc }}</button>
-    </div>
-    <div class="result" *ngIf="start">Resultado</div>
-    <div *ngIf="!isPlay" style="height: 38px;"></div>
-    <div *ngIf="correct && isPlay">
-        <i class="fa fa-3x fa-check-circle-o" style="color: green" aria-hidden="true"></i>
-    </div>
-    <div *ngIf="!correct && isPlay">
-        <i class="fa fa-3x fa-times-circle-o" style="color: red" aria-hidden="true"></i>
+    <button class="button-purple" *ngIf="!start" (click)="play()">Play</button>
+    <div class="container" *ngIf="start">
+        <div class="score" >Pontos: {{ score }}</div>
+        <div class="container-buttons" >
+            <button *ngFor="let note of notes; let i = index;" (click)="validateNote(note)">{{ note.desc }}</button>
+        </div>
+        <div *ngIf="correct && isPlay" style="margin-top: 8em;">
+            <i class="fa fa-3x fa-check-circle-o" style="color: green;" aria-hidden="true"></i>
+        </div>
+        <div *ngIf="!correct && isPlay" style="margin-top: 8em;">
+            <i class="fa fa-3x fa-times-circle-o" style="color: red;" aria-hidden="true"></i>
+        </div>
+        <br />
     </div>
     <br />
 </div>
