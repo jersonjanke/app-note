@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1612435465714,
+  "timestamp": 1612492992333,
   "index": "/app-notes/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "/app-notes/favicon.ico",
         "/app-notes/index.html",
-        "/app-notes/main-es2015.7852a9b16879af58459e.js",
-        "/app-notes/main-es5.7852a9b16879af58459e.js",
+        "/app-notes/main-es2015.04fde5bd209315255720.js",
+        "/app-notes/main-es5.04fde5bd209315255720.js",
         "/app-notes/manifest.webmanifest",
         "/app-notes/polyfills-es2015.6022d6f28e0500e60d30.js",
         "/app-notes/polyfills-es5.6e1055b712d0b250b19e.js",
@@ -105,8 +105,7 @@
         "/app-notes/assets/notes/mi.mp3",
         "/app-notes/assets/notes/re.mp3",
         "/app-notes/assets/notes/si.mp3",
-        "/app-notes/assets/notes/sol.mp3",
-        "/app-notes/bg-notes.dac1197f29f95e7c6b24.jpg"
+        "/app-notes/assets/notes/sol.mp3"
       ],
       "patterns": []
     }
@@ -187,11 +186,10 @@
     "/app-notes/assets/notes/re.mp3": "4fa3e7ca8419f3370f737ecc54b123e67ade7962",
     "/app-notes/assets/notes/si.mp3": "ddd059dc5ef74696bd9ed365a667cfcc721112df",
     "/app-notes/assets/notes/sol.mp3": "a1e09571d08e8da9758a7fb51ce6c60636bf9c57",
-    "/app-notes/bg-notes.dac1197f29f95e7c6b24.jpg": "90a001459077ec2a3c31a415e1c23d6eb824e929",
     "/app-notes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/app-notes/index.html": "0cf997ad0054c0a92e387614a3badb0ed1d1e0fa",
-    "/app-notes/main-es2015.7852a9b16879af58459e.js": "16d4e67c34ff6cd2db08cc623e9af32f40d34618",
-    "/app-notes/main-es5.7852a9b16879af58459e.js": "01c48bab84d703eedd2813c30770a07c164b60db",
+    "/app-notes/index.html": "95828f2dfed370ac44f350899facf5e933ba6d87",
+    "/app-notes/main-es2015.04fde5bd209315255720.js": "34e8607af980e5bc85e1d8b713ec367edfd50f35",
+    "/app-notes/main-es5.04fde5bd209315255720.js": "3f31fe41df8ed44ba709e3ca62f9432861eae1a2",
     "/app-notes/manifest.webmanifest": "359113d530970b639aab9712363e9014ec19fb6c",
     "/app-notes/polyfills-es2015.6022d6f28e0500e60d30.js": "cad3129c71535baaab25ac06d8429734959b0b3f",
     "/app-notes/polyfills-es5.6e1055b712d0b250b19e.js": "ddab36708d3bfe0102402cd9e170eb47c267b9f8",
