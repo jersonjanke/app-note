@@ -8,9 +8,11 @@
 }
 
 #app {
+  overflow: hidden;
   height: 100vh;
-
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+  background: rgb(115,56,242);
+  background: linear-gradient(90deg, rgba(115,56,242,1) 0%, rgba(115,56,242,0.9009978991596639) 38%, rgba(128,75,242,1) 94%);
 }

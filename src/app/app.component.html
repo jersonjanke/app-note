@@ -1,5 +1,8 @@
 <div id="app">
   <app-header></app-header>  
-  <app-game></app-game>
-  <app-footer></app-footer>
+  <app-game [play]="isPlay" [repeat]="isRepeat" [next]="isNext"></app-game>
+  <app-footer (play)="getPlay($event)" 
+              (repeat)="getRepeat($event)" 
+              (next)="getNext($event)">
+  </app-footer>
 </div>

@@ -1,5 +1,5 @@
 import { Notes } from './../model/notes';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AudioService } from '../service/audio.service';
 import { take } from 'rxjs/operators';
 
@@ -9,6 +9,10 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent {
+
+  @Input() set play(value: boolean) { value ? this.getPlay() : null }
+  @Input() set repeat(value: boolean) { value ? this.getPlay() : null}
+  @Input() set next(value: boolean) { value ? this.getPlay() : null };
 
   public correct: boolean;
   public note: number;
@@ -21,7 +25,7 @@ export class GameComponent {
 
   constructor(private audioService: AudioService) { }
 
-  play(): void {
+  getPlay(): void {
     this.start = true;
     this.audioService.randomNote(this.countNotes).subscribe(note => {
       this.note = note;
@@ -37,7 +41,7 @@ export class GameComponent {
     this.correct = note.code === this.note;
     this.score = this.score + (this.correct ? 10 : 0);
     this.setNextLevel();
-    setTimeout(() => { this.isPlay = false; this.play() }, 2000)
+    setTimeout(() => { this.isPlay = false; this.getPlay() }, 2000)
   }
 
   setNextLevel() {

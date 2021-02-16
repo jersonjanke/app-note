@@ -2,24 +2,29 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     align-items: center;
     max-width: 768px;
     margin: 0 auto;
 
-    .level {
+    .container-level {
         font-size: 28px;
-        color: #9817E8;
+        color: #7338F2;
         font-weight: 600;
-        height: 8vh;
+        height: 12vh;
         box-shadow: 2px 2px 3px #2f0e45;
-        width: 86vw;
-        border-radius: 8px;
-        margin-bottom: 16px;
+        width: 97%;
         display: flex;
         align-items: center;
-        justify-content: center;
-    }
+        justify-content: space-between;
+        background-color: #FEFBF8;
+
+        .card-aling {
+            text-align: center;
+            margin: 12px;
+            font-size: 20px;
+        }
+    }    
 
     .result {
         font-size: 24px;
@@ -47,22 +52,22 @@
     }
 
     .container {
-        height: 70vh;
-        width: 86%;
+        height: 40vh;
+        width: 96%;
         box-shadow: 2px 2px 3px #2f0e45;
-        border-radius: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        // justify-content: space-around;
+        background-color: #fff;
+        margin-top: 16px
     }
 
     .container-buttons {
         display: flex;
         width: 100%;
-        justify-content: space-evenly;
         height: 18vh;
+        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
 
         button {

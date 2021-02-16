@@ -1,12 +1,38 @@
 .footer {
     display: flex;
-    justify-content: space-evenly;
-    background-color: #2F0E45;
+    flex-direction: column;
+    align-items: center;
+    // background-color: #FEFBF8;
     height: 100%;
-    padding: 12px;
+    // padding: 12px;
 
     .fa {
-        color: #FFFFFF;
+        color: #7338F2;
         cursor: pointer;
+    }
+
+    .container-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        box-shadow: 2px 2px 3px #2f0e45;
+        margin: 0px;
+        padding: 18px;
+        // border-radius: 12px;
+        background-color: #FEFBF8;
+    }
+
+    .play {
+        height: 92px;
+        width: 92px;
+        position: relative;
+        margin-left: 5px;
+        top: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #FEFBF8;
+        box-shadow: 0 8px 15px #777;
     }
 }

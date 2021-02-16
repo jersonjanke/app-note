@@ -7,4 +7,22 @@ import { map, repeat, takeWhile } from "rxjs/operators";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+
+  public isPlay: boolean;
+  public isRepeat: boolean;
+  public isNext: boolean;
+
+  getPlay(e) {
+    this.isPlay = e;
+  }
+
+  getRepeat(e) {
+    this.isRepeat = e;
+  }
+
+  getNext(e) {
+    this.isNext = e;
+  }
+
+}

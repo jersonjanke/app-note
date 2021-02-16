@@ -1,16 +1,24 @@
 <div class="game">
-    <div class="level">Level: {{ level }}</div>
-    <button class="button-purple" *ngIf="!start" (click)="play()">Play</button>
-    <div class="container" *ngIf="start">
-        <div class="score" >Pontos: {{ score }}</div>
-        <div class="container-buttons" >
+    <div class="container-level">
+        <div class="card-aling">
+            <div>Score</div>
+            <div>{{ score }}</div>
+        </div>
+        <i class="fa fa-headphones" aria-hidden="true"></i>
+        <div class="card-aling">
+            <div class="level">Level</div>
+            <div>{{ level }}</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-buttons">
             <button *ngFor="let note of notes; let i = index;" (click)="validateNote(note)">{{ note.desc }}</button>
         </div>
-        <div *ngIf="correct && isPlay" style="margin-top: 8em;">
-            <i class="fa fa-3x fa-check-circle-o" style="color: green;" aria-hidden="true"></i>
+        <div *ngIf="correct && isPlay">
+            <i class="fa fa-5x fa-check-circle-o" style="color: green;" aria-hidden="true"></i>
         </div>
-        <div *ngIf="!correct && isPlay" style="margin-top: 8em;">
-            <i class="fa fa-3x fa-times-circle-o" style="color: red;" aria-hidden="true"></i>
+        <div *ngIf="!correct && isPlay">
+            <i class="fa fa-5x fa-times-circle-o" style="color: red;" aria-hidden="true"></i>
         </div>
         <br />
     </div>
