@@ -10,35 +10,54 @@ import { take } from 'rxjs/operators';
 })
 export class GameComponent {
 
-  @Input() set play(value: boolean) { value ? this.getPlay() : null }
-  @Input() set repeat(value: boolean) { value ? this.getPlay() : null}
-  @Input() set next(value: boolean) { value ? this.getPlay() : null };
+  @Input() set play(value: number) { value ? this.getPlay() : null }
+  @Input() set repeat(value: number) { this.getRepeat() }
+  @Input() set next(value: number) { value ? this.getNextNote() : null };
 
   public correct: boolean;
-  public note: number;
+  public randomNote: number;
   public score = 0;
   public level = 1;
   public isPlay: boolean;
   public start: boolean;
   public notes: Notes[];
   public countNotes = 2;
+  public audio = new Audio;
 
   constructor(private audioService: AudioService) { }
 
   getPlay(): void {
     this.start = true;
-    this.audioService.randomNote(this.countNotes).subscribe(note => {
-      this.note = note;
-      this.audioService.playAudio(note, this.level).pipe(take(1))
+    this.audioService.randomNote(this.countNotes).subscribe(randomNote => {
+      this.randomNote = randomNote;
+      this.audioService.playAudio(randomNote, this.level).pipe(take(1))
       .subscribe((notes: Notes[]) => {
         this.notes = notes;
+        this.playAudio(this.notes[this.randomNote].src)
+        console.log(this.randomNote)
       })
     });
   }
 
+  getRepeat() {
+    if (this.notes) {
+      this.playAudio(this.notes[this.randomNote].src);
+    }
+  }
+
+  getNextNote() {
+    this.getPlay();
+  }
+
+  playAudio(src: string) {
+    this.audio.src = src;
+    this.audio.load();
+    this.audio.play();
+  }
+
   validateNote(note: Notes): void {
     this.isPlay = true;
-    this.correct = note.code === this.note;
+    this.correct = note.code === this.randomNote;
     this.score = this.score + (this.correct ? 10 : 0);
     this.setNextLevel();
     setTimeout(() => { this.isPlay = false; this.getPlay() }, 2000)

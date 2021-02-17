@@ -1,5 +1,5 @@
 export interface Notes {
     code: number
-    note: string,
+    src: string,
     desc: string
 }

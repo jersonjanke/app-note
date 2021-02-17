@@ -7,22 +7,22 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class FooterComponent {
 
-  @Output() play: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() repeat: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() next: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() play: EventEmitter<number> = new EventEmitter<number>();
+  @Output() repeat: EventEmitter<number> = new EventEmitter<number>();
+  @Output() next: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   getPlay() {
-    this.play.emit(true);
+    this.play.emit(Math.floor(Math.random() * 1000));
   }
 
   getRepeat() {
-    this.repeat.emit(true);
+    this.repeat.emit(Math.floor(Math.random() * 1000));
   }
 
   getNext() {
-    this.next.emit(true);
+    this.next.emit(Math.floor(Math.random() * 1000));
   }
 
 }

@@ -12,13 +12,14 @@
     </div>
     <div class="container">
         <div class="container-buttons">
+            <div style="text-align: center; font-size: 24px; color: #9817E8" *ngIf="!notes">Click <span style="font-weight: bold;">play</span> and enjoy!</div>
             <button *ngFor="let note of notes; let i = index;" (click)="validateNote(note)">{{ note.desc }}</button>
         </div>
         <div *ngIf="correct && isPlay">
-            <i class="fa fa-5x fa-check-circle-o" style="color: green;" aria-hidden="true"></i>
+            <i class="fa fa-5x fa-check-circle-o" style="color: #9817E8;" aria-hidden="true"></i>
         </div>
         <div *ngIf="!correct && isPlay">
-            <i class="fa fa-5x fa-times-circle-o" style="color: red;" aria-hidden="true"></i>
+            <i class="fa fa-5x fa-times-circle-o" style="color: #ec4646;" aria-hidden="true"></i>
         </div>
         <br />
     </div>
