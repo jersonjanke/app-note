@@ -6,6 +6,15 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "notes": [
+    { "src": "assets/notes/do.mp3" },
+    { "src": "assets/notes/fa.mp3" },
+    { "src": "assets/notes/la.mp3" },
+    { "src": "assets/notes/mi.mp3" },
+    { "src": "assets/notes/re.mp3" },
+    { "src": "assets/notes/si.mp3" },
+    { "src": "assets/notes/sol.mp3" }
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

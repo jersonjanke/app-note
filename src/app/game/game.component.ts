@@ -34,7 +34,6 @@ export class GameComponent {
       .subscribe((notes: Notes[]) => {
         this.notes = notes;
         this.playAudio(this.notes[this.randomNote].src)
-        console.log(this.randomNote)
       })
     });
   }

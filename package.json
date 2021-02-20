@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "deploy": "ng deploy --base-href=/app-notes/",
+    "firebase-deploy": "ng build --prod && firebase deploy",
     "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa",
     "test": "ng test",
     "lint": "ng lint",
