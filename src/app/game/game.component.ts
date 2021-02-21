@@ -11,18 +11,20 @@ import { take } from 'rxjs/operators';
 export class GameComponent {
 
   @Input() set play(value: number) { value ? this.getPlay() : null }
-  @Input() set repeat(value: number) { this.getRepeat() }
+  @Input() set repeat(value: number) { value ? this.getRepeat(): null }
   @Input() set next(value: number) { value ? this.getNextNote() : null };
 
   public correct: boolean;
   public randomNote: number;
   public score = 0;
   public level = 1;
+  public life = 3;
   public isPlay: boolean;
   public start: boolean;
   public notes: Notes[];
   public countNotes = 2;
   public audio = new Audio;
+  public clicked: boolean;
 
   constructor(private audioService: AudioService) { }
 
@@ -56,10 +58,26 @@ export class GameComponent {
 
   validateNote(note: Notes): void {
     this.isPlay = true;
+    this.clicked = true;
     this.correct = note.code === this.randomNote;
     this.score = this.score + (this.correct ? 10 : 0);
+    this.life = (this.correct ? this.life : (this.life - 1));
     this.setNextLevel();
-    setTimeout(() => { this.isPlay = false; this.getPlay() }, 2000)
+    setTimeout(() => { 
+      this.isPlay = false; 
+      this.clicked = false;
+      if (this.life > 0) {
+        this.getPlay() 
+      }
+    }, 2000)
+  }
+  
+  restart() {
+    this.level = 1;
+    this.score = 0;
+    this.life = 3;
+    this.setNextLevel();
+    this.getPlay();
   }
 
   setNextLevel() {

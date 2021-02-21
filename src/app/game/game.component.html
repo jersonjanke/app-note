@@ -4,7 +4,11 @@
             <div>Score</div>
             <div>{{ score }}</div>
         </div>
-        <i class="fa fa-headphones" aria-hidden="true"></i>
+        <div>
+            <i class="fa" [ngClass]="(life == 3) ? 'fa-heart' : 'fa-heart-o'" style="margin: 4px;" aria-hidden="true"></i>
+            <i class="fa" [ngClass]="(life >= 2) ? 'fa-heart' : 'fa-heart-o'" style="margin: 4px;" aria-hidden="true"></i>
+            <i class="fa" [ngClass]="(life >= 1) ? 'fa-heart' : 'fa-heart-o'" style="margin: 4px;" aria-hidden="true"></i>
+        </div>
         <div class="card-aling">
             <div class="level">Level</div>
             <div>{{ level }}</div>
@@ -12,8 +16,14 @@
     </div>
     <div class="container">
         <div class="container-buttons">
-            <div style="text-align: center; font-size: 24px; color: #9817E8" *ngIf="!notes">Click <span style="font-weight: bold;">play</span> and enjoy!</div>
-            <button *ngFor="let note of notes; let i = index;" (click)="validateNote(note)">{{ note.desc }}</button>
+            <div *ngIf="life === 0" class="gameOver">
+                <h3>Game Over</h3> 
+                <button (click)="restart()">Try again</button>
+            </div>
+            <div class="container-buttons" *ngIf="life > 0">
+                <div style="text-align: center; font-size: 24px; color: #9817E8" *ngIf="!notes">Click <span style="font-weight: bold;">play</span> and enjoy!</div>
+                <button *ngFor="let note of notes; let i = index;" [disabled]="clicked" (click)="validateNote(note)">{{ note.desc }}</button>
+            </div>
         </div>
         <div *ngIf="correct && isPlay">
             <i class="fa fa-5x fa-check-circle-o" style="color: #9817E8;" aria-hidden="true"></i>
